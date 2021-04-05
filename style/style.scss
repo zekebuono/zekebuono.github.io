@@ -1,0 +1,460 @@
+/* font styles */
+$font-titles: 'IBM Plex Sans', sans-serif;
+$font-paragraphs: 'IBM Plex Mono', monospace;
+$font-buttons: 'IBM Plex Mono', monospace;
+$font-SemiBold: 'IBM Plex Sans', sans-serif;
+
+/* font colors */
+$font-color-white: #FFFFFF;
+$font-color-black: #060A24;
+$font-link-hover: #00F3BB;
+$font-link-active: #060a248e;
+$text-link-hover: #060a2486;
+
+/* font sizes */
+$font64px: 4rem;
+$font48px: 3rem;
+$font36px: 2.25rem;
+$font18px: 1.125rem;
+$font14px: 0.875rem;
+
+/* font weight */
+$weight400: 400;
+
+/* background colors */
+$background-color: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+$background-color-white: #FFFFFF;
+
+/* button colors */
+$button-normal-background: #00F3BB;
+$button-hover-background: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#paragraph-desktop{
+    display: none;
+    @media screen and (min-width: 1439px){
+        display: block;
+        width: 40%;
+    }
+}
+
+#paragraph-mobile{
+    display: block;
+    @media screen and (min-width: 1439px){
+        display: none;
+    }
+}
+
+
+
+body{
+    width: 100%;
+    header{
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 2.75rem;
+        top: 0;
+        padding: 0.625rem 1rem;
+        z-index: 1;
+        .img-logo{
+            width: 24px;
+        }
+        nav{
+            .menu{
+                display: flex;
+                align-items: center;
+                input{
+                    display: block;
+                    display: none;
+                    position: absolute;
+                }
+                input[type="checkbox"]:checked ~ ul {
+                    height: 240px;
+                }
+                ul{
+                    width: 100%;
+                    list-style: none;
+                    background: $background-color-white;
+                    @media screen and (max-width:1439px){
+                        position: absolute;
+                        background: $background-color;
+                        top: 45px;
+                        right: 0;
+                        overflow: hidden;
+                        height: 0px;
+                    }
+                    li{
+                        position: relative;
+                        @media screen and (min-width: 1439px){
+                            padding: 10px;
+                        }
+                        a{
+                            font-family: $font-buttons;
+                            font-weight: 300;
+                            color: $font-color-white;
+                            text-decoration: none;
+                            position: relative;
+                            padding: 16px 5%;
+                            line-height: 28px;
+                            display: block;
+                            @media screen and (min-width: 1439px){
+                                font-family: $font-buttons;
+                                color: $font-color-black;
+                            }
+                        }
+                        a:hover{
+                            color:$button-normal-background;
+                            text-decoration: line-through;
+                            @media screen and (min-width: 1439px){
+                            color: $text-link-hover;
+                            }
+                        }
+                        a:active{
+                            color: $font-link-active;
+                            text-decoration: line-through;
+                        }
+                    }
+                    li{
+                        background: $background-color-white;
+                    }
+                }
+            }
+        }
+    }
+    main{
+
+            h1, del, .dot{
+                font-family: $font-titles;
+                font-size: $font36px;
+                font-weight: 400;
+            }
+            h1{
+                br{
+                    display: inline-block;
+                    @media screen and (min-width: 1439px){
+                        display: none;
+                    }
+                }
+            }
+            .dot{
+                color: $font-color-black;
+                @media screen and (min-width: 1439px){
+                    color: blue;
+                    }
+            }
+            h2{
+                font-family: $font-titles;
+                font-size: $font36px;
+                font-weight: 300;
+            }
+            p{
+                font-family: $font-paragraphs;
+                font-size: $font14px;
+                font-weight: 300;
+                line-height: 22px;
+            }
+            .button{
+                font-family: $font-buttons;
+                font-size: 1rem;
+                font-weight: 500;
+                color: $font-color-black;
+                background-color: $button-normal-background;
+                border: none;
+                padding: 10px;
+                text-decoration: none;
+                width: 100%;
+                text-align: center;
+                display: inline-block;
+                @media screen and (min-width: 1439px){
+                    width: auto;
+                    margin-top: 1rem;
+                    margin-bottom: 2.25rem;
+                    margin-left: 200px;
+                }
+            }
+            .button:hover{
+                background-image: $button-hover-background;
+                color: $font-color-white;
+                cursor: pointer;
+            }
+        .section-one{
+            margin: 1rem;
+            p{
+                margin-top: 1rem;
+                margin-bottom: 2.25rem;
+                font-size: $font14px;
+            }
+        }
+        .section-two{
+            background: $background-color;
+            clip-path: polygon(0 3%, 100% 0%, 100% 97%, 0% 100%);
+            padding: 35px 0px 140px 0px;
+            @media screen and (min-width: 1439px){
+                padding-top: 186px;
+                padding-bottom: 200px;
+                clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+            }
+            .podcasts.title{
+                color: $font-color-white;
+                margin: 1rem;
+            }
+            .iframes{
+                margin: 12px 12px;
+                width: 100%;
+                iframe{
+                    margin-bottom: 7px;
+                }
+            }
+        }
+        .section-three{
+            @media screen and (min-width: 1439px){
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .come-from{
+                @media screen and (min-width: 1439px){
+                width: 40%;
+                }
+            }
+            .images{
+                width: 100%;
+                margin-top: -100px;
+                position: relative;
+                @media screen and (min-width: 1439px){
+                    width: 30%;
+                }
+            }
+            h2{
+                margin: 1rem 1rem 0rem 1rem;
+            }
+            p{
+                margin: 8px 1rem 54px 1rem;
+                
+            }
+        }
+        .section-four{
+            h2{
+                margin: 0rem 1rem 0.875rem 1rem;
+            }
+            .d-grid{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+                @media screen and (min-width: 1439px){
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                }
+                .images{
+                    width: 100%;
+                }
+            }
+        }
+        .section-five{
+            h2{
+                margin: 3rem 1rem 1.5rem 1rem;
+                @media screen and (min-width: 1439px){
+                        margin-left: 200px;
+                        margin-bottom: 69px;
+                        font-size: $font48px;
+                        }
+            }
+            .icons-grid{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                @media screen and (min-width: 1439px){
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    grid-template-rows: 1fr;
+                }
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    @media screen and (min-width: 1439px){
+                        flex-direction: column;
+                    }
+                    h3{
+                        font-size: 1.5rem;
+                        font-family: $font-SemiBold;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .section-six{
+            background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+            clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);
+            padding-top: 50px;
+            padding-bottom: 50px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-left: 15px;
+            padding-right: 15px;
+            @media screen and (min-width: 1439px){
+                clip-path: polygon(0 45%, 200% 0%, 100% 100%, 0% 100%);
+                padding-top: 300px;
+                padding-bottom: 100px;
+            }
+            h2{
+                text-align: center;
+                color: $font-color-white;
+                margin: 1rem;
+                @media screen and (min-width: 1439px){
+                font-size: $font48px;
+                }
+            }
+            .button{
+                margin-left: 0;
+            }
+            
+            
+        }
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media screen and (min-width: 1439px){
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 10px 100px;
+        }
+        .copyright{
+            font-family: $font-paragraphs;
+            font-weight: 300;
+            font-size: $font14px;
+            margin: 25px;
+        }
+        .social-media{
+            display: flex;
+            a{
+                text-decoration: none;
+            }
+            i{
+                margin: 0px 17px 35px 17px;
+            }
+            
+        }
+    }
+}
+
+@media screen and (min-width: 1439px){
+    header{
+        .menu{
+            label{
+                display: none;
+            }
+            ul{
+                display: flex;
+                
+            }
+        }
+    }
+    main{
+        .section-one{
+            margin-left: 200px;
+            h1{
+                margin-left: 200px;
+                &,del{
+                    font-size: $font64px;
+                }
+            }
+            p{
+                font-size: 1rem;
+                margin-left: 200px;
+            }
+        }
+        .section-two{
+            h2{
+                font-size: $font48px;
+                margin-left: 200px;
+            }
+            .iframes{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                iframe{
+                    width: 584px;
+                    height: 232px;
+                    margin-left: 50px;
+                    margin-bottom: 72px;
+                }
+                
+            }
+        }
+
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+@media screen and (min-width: 719px){
+    body{
+        width: 100%;
+        header{
+            margin: 0;
+            padding: 0;
+            nav div{
+                input{
+                    display: none;
+                }
+                ul{
+                    font-family: $font-paragraphs;
+                    background-color: $background-color;
+                    height: 224px;
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    li a{
+                        color: $font-color-white;
+                        text-decoration: none;
+                        list-style-type: none;
+                        float: left;
+                        position: relative;
+                    }
+                    li a:hover{
+                        color: $font-link-hover;
+                    }
+                    li a:active{
+                        color: $font-link-active;
+                    }
+                }
+            }
+        }
+    }
+}*/
